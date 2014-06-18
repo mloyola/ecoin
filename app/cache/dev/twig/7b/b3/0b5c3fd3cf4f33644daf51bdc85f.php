@@ -112,7 +112,7 @@ class __TwigTemplate_7bb30b5c3fd3cf4f33644daf51bdc85f extends Twig_Template
             <h1 class=\"text-center\">";
         // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Iniciar sesión", array(), $this->getContext($context, "lenguaje")), "html", null, true);
-        echo "</h1>
+        echo " - Login</h1>
             
             ";
         // line 37
