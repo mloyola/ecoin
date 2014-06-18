@@ -1,0 +1,14 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: "ecoin"
+    database_user: "root"
+    database_password: "40262378"
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: 9e32e5efcb231fde4900709a1972836aa2ba106b
+    database_path: null
