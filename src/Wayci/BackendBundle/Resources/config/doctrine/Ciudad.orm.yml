@@ -1,0 +1,26 @@
+Wayci\BackendBundle\Entity\Ciudad:
+    type: entity
+    table: ciudad
+    repositoryClass: Wayci\BackendBundle\Entity\CiudadRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nombre:
+            type: string
+            length: 255
+        fchCreate:
+            type: date
+            column: fch_create
+
+    manyToOne:
+        pais:
+            targetEntity: Pais
+            inversedBy: ciudades
+            joinColumn:
+                name: pais_id
+                referencedColumnName: id    
+
+    lifecycleCallbacks: {  }

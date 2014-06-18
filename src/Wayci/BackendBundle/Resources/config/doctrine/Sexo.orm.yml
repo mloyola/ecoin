@@ -1,0 +1,14 @@
+Wayci\BackendBundle\Entity\Sexo:
+    type: entity
+    table: sexo
+    repositoryClass: Wayci\BackendBundle\Entity\SexoRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nombre:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

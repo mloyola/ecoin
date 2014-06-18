@@ -1,0 +1,115 @@
+{% extends '::frontend_star.html.twig' %}
+
+{% block title %}
+    {{ 'Paga desde tu móvil de forma fácil y segura'|trans({},lenguaje) }}
+{% endblock %}
+            
+{% block metadesc %}
+Paga todos los productos y servicios que quieras desde tu móvil, ya no necesitas dinero en efectivo o el plástico de tus tarjetas de crédito o debito.
+{% endblock %}
+
+{% block metaetiq %}
+Pago, pagar, móvil, celular, teléfono, pago móvil, pagar desde el móvil, pagar desde el celular, pagar desde el teléfono, seguro, pago seguro
+{% endblock %}            
+
+{% block comboidioma %}
+  <li><a href="{{ path('frontend_homepage', { '_locale': 'es' }) }}">{{ 'Español'|trans({},lenguaje) }}</a></li>
+  <li><a href="{{ path('frontend_homepage', { '_locale': 'en' }) }}">{{ 'Ingles'|trans({},lenguaje) }}</a></li>
+  <li><a href="{{ path('frontend_homepage', { '_locale': 'pt' }) }}">{{ 'Portugués'|trans({},lenguaje) }}</a></li>
+  <li><a href="{{ path('frontend_homepage', { '_locale': 'it' }) }}">{{ 'Italiano'|trans({},lenguaje) }}</a></li>
+{% endblock %}  
+
+{% block jumbotron %}
+  <div class="jumbotron">
+    <div class="container">
+      
+    {# Inicio pagina 1 #}
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" align="center">                      
+        <h1>{{ 'Paga tus compras desde tu móvil'|trans({},lenguaje) }}.</h1>   
+        <h4>{{ 'Fácil y seguro'|trans({},lenguaje) }}.</h4>
+        <h4>{{ 'No necesitas llevar dinero en efectivo'|trans({},lenguaje) }}.</h4>
+        <h4>{{ 'No necesitas llevar tarjetas de crédito o debito'|trans({},lenguaje) }}.</h4>
+        <br>          
+        <br>                        
+        <div class="col-xs-6">
+          <a href="#"><img class="img-responsive" src="{{ asset(global.directorio_img ~ "appstore.png")}}" alt="" ></a>
+        </div>
+        <div class="col-xs-6">
+          <a href="#"><img class="img-responsive" src="{{ asset(global.directorio_img ~ "googleplay.png")}}" alt="" ></a>
+        </div>          
+        <br>          
+        <br>         
+        <br>            
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">                  
+          <img class="img-responsive" src="{{ asset(global.directorio_img ~ "screenshot_profile.png")}}" alt="" >                           
+        </div>
+      </div>   
+      
+      <div class="Hidden-xs visible-sm visible-md visible-lg col-sm-4 col-md-4 col-lg-4" align="center">                  
+          <img class="img-responsive" src="{{ asset(global.directorio_img ~ "screenshot_profile.png")}}" alt="" >                           
+      </div>      
+                  
+      {# Fin pagina 1 #}  
+
+    </div>
+  </div>
+  <hr>                   
+{% endblock %}      
+
+{% block contenido %}    
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" align="center">
+    <ul class="media-list">
+      <li class="media">        
+        <div class="media-body">
+          <img class="img-responsive" src="{{ asset(global.directorio_img ~ "screenshot_pay.png")}}" alt="{{ 'Paga desde el móvil'|trans({},lenguaje) }}" >          
+          <h1 class="media-heading">{{ 'Paga desde el móvil'|trans({},lenguaje) }}</h1>
+          <p class="text-justify">{{ 'Es muy fácil y sencillo, solo necesitas registrarte gratis como usuario y descargar la app en tu dispositivo móvil'|trans({},lenguaje) }}.</p>
+          <a href="{{ path('usuario_registro', { '_locale': lenguaje }) }}" >{{ 'Registrarme Gratis como Usuario'|trans({},lenguaje) }}</a>
+        </div>
+      </li>          
+    </ul> 
+  </div>
+
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" align="center">
+    <ul class="media-list">
+      <li class="media">        
+        <div class="media-body">
+          <img class="img-responsive" src="{{ asset(global.directorio_img ~ "screenshot_affiliate.png")}}" alt="{{ 'Afilia gratis tu negocio'|trans({},lenguaje) }}" >
+          <h1 class="media-heading">{{ 'Afilia gratis tu negocio'|trans({},lenguaje) }}</h1>
+          <p class="text-justify">{{ 'Registralo gratis, ingresa los datos que se solicitan y listo !, tu negocio ya cuenta con un nuevo medio de pago'|trans({},lenguaje) }}.</p>
+          <a href="{{ path('comercio_registro', { '_locale': lenguaje }) }}" >{{ 'Afiliar Gratis mi negocio'|trans({},lenguaje) }}</a>
+        </div>
+      </li>          
+    </ul>  
+  </div>
+
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" align="center">
+    <ul class="media-list">
+      <li class="media">        
+        <div class="media-body">
+          <img class="img-responsive" src="{{ asset(global.directorio_img ~ "screenshot_pin.png")}}" alt="{{ 'Seguro y Confiable'|trans({},lenguaje) }}" >
+          <h1 class="media-heading">{{ 'Seguro y Confiable'|trans({},lenguaje) }}</h1>
+          <p class="text-justify">{{ 'Evita clonaciones, robos o pérdidas de dinero o tarjetas de crédito, solo necesitas tu dispositivo móvil para realizar el pago de tus compras'|trans({},lenguaje) }}.</p>
+          <a href="">{{ '¿Cómo funciona?'|trans({},lenguaje) }}</a>
+        </div>
+      </li>          
+    </ul>   
+  </div>  
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+    <table>
+   {% for entity in entities %}
+            <tr>
+                
+                <td>{{ entity.id }}</td>                
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.razonsocial }}</td>
+                
+                <td>{{ entity.telefono }}</td>
+                
+            </tr>
+        {% endfor %}
+      </table>   
+  </div>
+
+{% endblock %}

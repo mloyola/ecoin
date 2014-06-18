@@ -1,0 +1,47 @@
+<?php
+
+namespace Wayci\BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Procesador
+ */
+class Procesador
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $nombre;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Wayci\BackendBundle\Entity\Pais", inversedBy="paises")
+    * @ORM\JoinColumn(name="pais_id", referencedColumnName="id")
+    */
+    protected $pais; 
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Wayci\BackendBundle\Entity\Metodo", inversedBy="procesadores")
+     * @ORM\JoinTable(name="procesadores_metodos")
+     */
+    private $metodos;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Wayci\BackendBundle\Entity\Moneda", inversedBy="procesadores")
+     * @ORM\JoinTable(name="procesadores_monedas")
+     */
+    private $monedas;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Wayci\BackendBundle\Entity\Producto", inversedBy="procesadores")
+     * @ORM\JoinTable(name="procesadores_productos_2p")
+     */
+    private $productos;
+
+    
+}

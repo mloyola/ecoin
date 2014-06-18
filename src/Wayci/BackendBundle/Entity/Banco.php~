@@ -1,0 +1,32 @@
+<?php
+
+namespace Wayci\BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Banco
+ */
+class Banco
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $identificador;
+
+    /**
+     * @var string
+     */
+    private $descripcion;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Wayci\BackendBundle\Entity\Pais", inversedBy="bancos")
+    * @ORM\JoinColumn(name="pais_id", referencedColumnName="id")
+    */
+    protected $pais;     
+}

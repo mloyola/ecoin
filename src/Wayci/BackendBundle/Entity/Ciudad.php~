@@ -1,0 +1,39 @@
+<?php
+
+namespace Wayci\BackendBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ciudad
+ */
+class Ciudad
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message="Ingrese el nombre")  
+     */
+    private $nombre;
+
+    /**
+     * @var \DateTime
+     */
+    private $fchCreate;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Wayci\BackendBundle\Entity\Pais", inversedBy="ciudades")
+    * @ORM\JoinColumn(name="pais_id", referencedColumnName="id")
+    */
+    protected $pais;     
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wayci\FrontendBundle\Entity\Usuario", mappedBy="ciudad")
+     */
+    protected $usuarios;
+
+}

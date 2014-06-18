@@ -1,0 +1,17 @@
+Wayci\BackendBundle\Entity\Idioma:
+    type: entity
+    table: idioma
+    repositoryClass: Wayci\BackendBundle\Entity\IdiomaRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nombre:
+            type: string
+            length: 255
+        router:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

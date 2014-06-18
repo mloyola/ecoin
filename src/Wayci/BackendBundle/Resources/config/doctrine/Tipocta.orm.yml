@@ -1,0 +1,26 @@
+Wayci\BackendBundle\Entity\Tipocta:
+    type: entity
+    table: tipocta
+    repositoryClass: Wayci\BackendBundle\Entity\TipoctaRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nombre:
+            type: string
+            length: '20'
+    manyToMany:
+        paises:
+            targetEntity: Pais
+            inversedBy: tipocuentas
+            joinTable:
+                name: tipocuentas_paises
+                joinColumns:
+                    tipocta_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    pais_id:
+                        referencedColumnName: id            
+    lifecycleCallbacks: {  }

@@ -1,0 +1,14 @@
+Wayci\BackendBundle\Entity\Interior:
+    type: entity
+    table: interior
+    repositoryClass: Wayci\BackendBundle\Entity\InteriorRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        descripcion:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }
