@@ -2,9 +2,9 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     r7000326_ecoin
-    database_user:     r7000326_user
-    database_password: 'lavalle662'
+    database_name:     name_db
+    database_user:     user_db
+    database_password: pass_db
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
