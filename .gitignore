@@ -9,8 +9,10 @@ app/config/routing_dev.yml ---
 app/cache/*
 app/logs/*
 vendor/*
-public_html/app_dev.php
-public_html/config.php
+
+# -- public_html/app_dev.php
+public_html/config.php ---
+
 # -- public_html/bundles/* ---
 web/bundles/*
 
